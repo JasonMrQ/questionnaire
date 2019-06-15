@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/questionnaire');
+mongoose.connect('mongodb://127.0.0.1/questionnaire',{useMongoClient: true});
 
 app.use(session({
     secret: 'questionnaire',
